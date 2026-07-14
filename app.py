@@ -28,7 +28,7 @@ def proxy():
         sock.connect((TMS_HOST, TMS_PORT))
         print("[SOCKET] Connected", flush=True)
 
-        payload = (command + "\n").encode("utf-8")
+        payload = (command + "\r\n").encode("utf-8")
         print(f"[SOCKET] Sending {len(payload)} bytes: {payload!r}", flush=True)
         sock.sendall(payload)
 
